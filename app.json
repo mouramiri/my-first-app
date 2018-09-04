@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-first-app",
-    "description": "This project is really great.",
+    "name": "Coffee Finder",
+    "description": "This project is to help users find the their favorite coffee places and save them in for later. It can also be used to find the best coffee places aroud town.",
     "slug": "my-first-app",
     "privacy": "public",
     "sdkVersion": "29.0.0",
@@ -11,8 +11,8 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#F8E9D6"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,7 +21,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      
+      "supportsTablet": false
     }
   }
 }
