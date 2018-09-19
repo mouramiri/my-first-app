@@ -1,12 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native';
+import {createStackNavigator,} from 'react-navigation';
+
+import Loginform from './components/loginform';
 
 export default class App extends React.Component {
     render() {
       return (
-        <View style={styles.container}>
-          <Text>This shit is harder than expected!</Text>
-        </View>
+        <ImageBackground source={require('./assets/splash/onboarding.png')} style={styles.container}>
+
+            <Loginform />
+
+        </ImageBackground>
       );
     }
   }
@@ -14,8 +19,9 @@ export default class App extends React.Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
       justifyContent: 'center',
-    },
+      alignSelf: 'stretch',
+      width: null,
+      padding: 20,
+    }
   });
