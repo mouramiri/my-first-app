@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native';
 import {createStackNavigator,} from 'react-navigation';
 
-import Loginform from '../components/loginform';
+import Loginform from './src/components/loginform';
 
 export default class App extends React.Component {
     render() {
       return (
-        <ImageBackground source={require('./assets/splash/onboarding.png')} style={styles.container}>
+        <ImageBackground source={require('./src/assets/splash/onboarding.png')} style={styles.container}>
 
-            <Loginform />
+           <Loginform />
 
         </ImageBackground>
       );
