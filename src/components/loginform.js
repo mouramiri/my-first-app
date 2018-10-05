@@ -3,66 +3,71 @@ import { StyleSheet, Text,  View, TextInput, KeyboardAvoidingView} from 'react-n
 import { Button } from 'react-native-elements';
 
 export default class Loginform extends React.Component {
-    render() {
+  handleClick(screen) {
+    const { navigate } = this.props.navigation;
+    navigate(screen)
+  }
+  render() {
       return (
-          <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-              <View style={styles.loginformcontainer}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+          <View style={styles.loginformcontainer}>
 
-                    <View>                        
-                        <Text style={styles.titletext}> Welcome</Text> 
-                        <Text style={styles.titletext}> CoffeeLover!</Text>
-                    </View>
+            <View>                        
+              <Text style={styles.titletext}> Welcome</Text> 
+              <Text style={styles.titletext}> CoffeeLover!</Text>
+            </View>
 
-                  <View style={styles.inputcontainer}>
-                    <TextInput style={styles.textinput}
-                        underlineColorAndroid='transparent' 
-                        placeholder='Email'
-                        keyboardType='email-address' 
-                        returnKeyType='next'
-                        autoCorrect={false}
-                    />
+            <View style={styles.inputcontainer}>
+              <TextInput style={styles.textinput}
+                underlineColorAndroid='transparent' 
+                placeholder='Email'
+                keyboardType='email-address' 
+                returnKeyType='next'
+                autoCorrect={false}
+              />
 
-                    <TextInput style={styles.textinput}
-                        underlineColorAndroid='transparent' 
-                        placeholder='Password' 
-                        returnKeyType='go'
-                        secureTextEntry
-                        autoCorrect={false}
-                    />
-                  </View>
+              <TextInput style={styles.textinput}
+                underlineColorAndroid='transparent' 
+                placeholder='Password' 
+                returnKeyType='go'
+                secureTextEntry
+                autoCorrect={false}
+              />
+            </View>
 
-                  <View>
-                    <Text style={styles.forgottext}>Forgot Password</Text>
-                  </View>
+            <View>
+              <Text style={styles.forgottext} onPress={this.handleClick.bind(this, 'ForgotPassword')}>Forgot Password</Text>
+            </View>
 
-                  <View style={styles.buttoncontainer}>
-                    <Button                  
-                      title='Log In' rounded
-                      titleStyle={{ fontSize: 22 }}
-                      buttonStyle={{
-                        backgroundColor: '#B98068',
-                        width: 375,
-                        height: 60,
-                        borderColor: 'transparent',
-                        borderWidth: 0.6,
-                      }}
-                      containerStyle={{ marginTop: 70 }}
-                    />
-                  </View>
+            <View style={styles.buttoncontainer}>
+              <Button 
+                onPress={this.handleClick}
+                title='Log In' rounded
+                titleStyle={{ fontSize: 22 }}
+                buttonStyle={{
+                  backgroundColor: '#B98068',
+                  width: 375,
+                  height: 60,
+                  borderColor: 'transparent',
+                  borderWidth: 0.6
+                  }}
+                containerStyle={{ marginTop: 70 }}
+              />
+            </View>
 
-                  <Text style={styles.registercontainer}>
-                    <Text style={styles.accounttext}>Don't have an account?</Text>
-                    <Text style={styles.registertext}>{" "}Register</Text>
-                  </Text>
-              </View>
-          </KeyboardAvoidingView>
+            <Text style={styles.registercontainer}>
+              <Text style={styles.accounttext}>Don't have an account?</Text>
+              <Text style={styles.registertext} onPress={this.handleClick.bind(this, 'Registration')}>{" "}Register</Text>
+            </Text>
+          </View>
+        </KeyboardAvoidingView>
       );
     }
   }
   
   const styles = StyleSheet.create({
     loginformcontainer: {
-      marginTop: 400
+      marginTop: 370
     },
     textinput: {
       color: '#624735',
@@ -77,7 +82,6 @@ export default class Loginform extends React.Component {
       fontSize: 32,
       fontWeight: 'bold',
       color: '#8C746A',
-      marginBottom: 5,
       alignSelf: 'center'
     },
     buttoncontainer: {
@@ -88,7 +92,7 @@ export default class Loginform extends React.Component {
       color: '#B98068',
       fontSize: 14,
       alignSelf: 'flex-end',
-      marginBottom: 20
+      marginBottom: 15
     },
     accounttext: {
       color: '#9B9B9B',
@@ -100,7 +104,8 @@ export default class Loginform extends React.Component {
       marginRight: 5
     },
     registercontainer: {
-      alignSelf: 'center'
+      alignSelf: 'center',
+      marginTop: 10
     },
     inputcontainer: {
       marginTop: 30
