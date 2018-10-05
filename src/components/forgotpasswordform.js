@@ -44,6 +44,14 @@ export default class ForgotPassword extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'top',
+        alignSelf: 'stretch',
+        width: null,
+        padding: 20,
+        backgroundColor: '#FFFFFF'
+    },
     titletext:{
         fontSize: 32,
         fontWeight: 'bold',

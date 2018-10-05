@@ -3,7 +3,10 @@ import { StyleSheet, Text,  View, TextInput, KeyboardAvoidingView} from 'react-n
 import { Button } from 'react-native-elements';
 
 export default class Registration extends React.Component {
-    handleClick() {console.log('click')}
+    handleClick(screen) {
+        const { navigate } = this.props.navigation;
+        navigate(screen)
+    }
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -73,7 +76,7 @@ export default class Registration extends React.Component {
 
                     <Text style={styles.logincontainer}>
                         <Text style={styles.accounttext}>Already have an account?</Text>
-                        <Text style={styles.logintext}>{" "}Log In</Text>
+                        <Text style={styles.logintext} onPress={this.handleClick.bind(this, 'Login')}>{" "}Log In</Text>
                     </Text>
 
                 </View>
@@ -83,8 +86,13 @@ export default class Registration extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    registrationformcontainer: {
-        marginTop: 100
+    container: {
+        flex: 1,
+        justifyContent: 'top',
+        alignSelf: 'stretch',
+        width: null,
+        padding: 20,
+        backgroundColor: '#FFFFFF'
     },
     titletext:{
         fontSize: 32,
