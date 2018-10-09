@@ -41,7 +41,7 @@ export default class Loginform extends React.Component {
 
             <View style={styles.buttoncontainer}>
               <Button 
-                onPress={this.handleClick}
+                onPress={this.handleClick.bind(this, 'Home')}
                 title='Log In' rounded
                 titleStyle={{ fontSize: 22 }}
                 buttonStyle={{

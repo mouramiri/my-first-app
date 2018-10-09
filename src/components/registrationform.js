@@ -60,7 +60,7 @@ export default class Registration extends React.Component {
 
                     <View style={styles.buttoncontainer}>
                         <Button 
-                        onPress={this.handleClick}
+                        onPress={this.handleClick.bind(this, 'Home')}
                         title='Register' rounded
                         titleStyle={{ fontSize: 22 }}
                         buttonStyle={{
